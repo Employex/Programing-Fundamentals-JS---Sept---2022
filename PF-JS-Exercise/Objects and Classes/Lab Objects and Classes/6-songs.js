@@ -1,34 +1,22 @@
 function songs(input) {
-    class Song {
-        constructor(typeList, name, time) {
-            this.typeList = typeList
-            this.name = name
-            this.time = time
-        }
-
-    }
-
+    
     let songs = []
     let numberOfSong = input.shift()
     let typeSong = input.pop()
 
     for (let i = 0; i < numberOfSong; i++) {
-        let [typeList, name, time] = input[i].split('_')
-        let song = new Song(typeList, name, time)
+        let [typeList, name] = input[i].split('_')
+        let song = {typeList, name}
         songs.push(song)
     }
 
     if (typeSong === "all") {
-        songs.forEach((i) => console.log(i.name))
+        songs.forEach((song) => console.log(song.name))
     } else {
-        let filter = songs.filter((i) => i.type === typeSong)
-        filter.forEach((i) => console.log(i.name))
+        let filter = songs.filter((song) => song.typeList === typeSong)
+        filter.forEach((song) => console.log(song.name))
     }
 
 
 }
-songs([3,
-    'favourite_DownTown_3:14',
-    'favourite_Kiss_4:16',
-    'favourite_Smooth Criminal_4:01',
-    'favourite'])
+songs([2, 'like_Replay_3:15', 'ban_Photoshop_3:48', 'all'])

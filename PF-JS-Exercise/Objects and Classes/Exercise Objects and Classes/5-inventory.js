@@ -14,14 +14,12 @@ function inventory(array) {
     everyhero.sort((a,b)=>a.level-b.level)
     console.log(everyhero);
 
-    // for(let el of everyhero){
-    //     console.log(`Hero: ${el.name}`);
-    //     console.log(`level => ${el.level}`);
-    //     console.log(`items => ${el.item}`);
+    for(let el of everyhero){
+        console.log(`Hero: ${el.name}`);
+        console.log(`level => ${el.level}`);
+        console.log(`items => ${el.item}`);
 
-
-
-    // }
+    }
 }
 inventory([
   "Isacc / 25 / Apple, GravityGun",
