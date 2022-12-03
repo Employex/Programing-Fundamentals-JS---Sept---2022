@@ -1,9 +1,8 @@
-function matchFullName(input){
-    let text = input.shift()
-    let pattern = /\+359([ -])2\1\d{3}\1\d{4}\b/g
+function matchFullName(input) {
+    let pattern = /\b[A-Z][a-z]+ [A-Z][a-z]+\b/g
 
-    let matches = text.match(pattern)
-   
-    console.log(matches.join(', '));
+    let text = input.match(pattern)
+
+    console.log(text.join(' '));
 }
-matchFullName(['+359 2 222 2222,359-2-222-2222, +359/2/222/2222, +359-2 222 2222 +359 2-222-2222, +359-2-222-222, +359-2-222-22222 +359-2-222-2222'])
+matchFullName("Ivan Ivanov, Ivan ivanov, ivan Ivanov, IVan Ivanov, Test Testov, Ivan	Ivanov")
